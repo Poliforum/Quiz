@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz HTML</title>
+  <link href="https://upload.wikimedia.org/wikipedia/commons/b/b9/Konstruktionsst%C3%A5l.JPG" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f4f8;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    .header-image {
+      display: block;
+      margin: 0 auto 30px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .question {
+      margin-bottom: 30px;
+    }
+    .question p {
+      font-weight: 600;
+    }
+    .question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+    .question img {
+      margin: 8px 0;
+      width: auto;
+      height: 180px; /* 👈 ujednolicona wysokość */
+      object-fit: cover;
+      border: 2px solid transparent;
+      transition: border 0.3s ease;
+    }
+    .question input[type="radio"] {
+      margin-right: 8px;
+    }
+    .question input[type="radio"]:checked + img {
+      border: 2px solid #3498db;
+    }
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 30px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .result {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .result img {
+      max-width: 350px;
+      border-radius: 8px;
+    }
+    .result p {
+      font-size: 18px;
+      margin-top: 15px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JAKIM KSZTAŁTOWNIKIEM JESTEŚ?</h1>
+
+    <!-- ✅ Wklej swoje zdjęcie tutaj -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Konstruktionsst%C3%A5l.JPG" alt="Zdjęcie nagłówka" class="header-image">
+
+    <form id="quizForm">
+
+      <!-- Pytania jak wcześniej -->
+
+      <div class="question">
+        <p>1. Coś na rozgrzewkę. Jaki jest wzór na naprężenia normalne w pręcie ściskanym/rozciąganym?</p>
+        <label><input type="radio" name="q1" value="0"> σ = A/N</label>
+        <label><input type="radio" name="q1" value="0"> σ = My/A</label>
+        <label><input type="radio" name="q1" value="1"> σ = N/A</label>
+        <label><input type="radio" name="q1" value="0"> σ = My/Iy</label>
+      </div>
+
+      <div class="question">
+        <p>2. Z którym wykresem związane jest Prawo Hooke'a?</p>
+        <label><input type="radio" name="q2" value="0"><img src="https://quizizz.com/media/resource/gs/quizizz-media/quizzes/659da196-dc01-4a2c-bcfb-57408906da66" alt="Wykres 1"></label>
+        <label><input type="radio" name="q2" value="1"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQF72y8NEQ_KKV4weYd9o1alNaNUl679VO6XhhFyDFmSryitDA7" alt="Wykres 2"></label>
+        <label><input type="radio" name="q2" value="0"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Sinusoida_komplekse.png/640px-Sinusoida_komplekse.png" alt="Wykres 3"></label>
+      </div>
+
+      <div class="question">
+        <p>3. Na którym zdjęciu widać ścianę szczelinową?</p>
+        <label><input type="radio" name="q3" value="1"><img src="https://bi.im-g.pl/im/ff/71/19/z26678527IEG,Budowa-budynku-mieszkalnego--Braniborska--firmy-Pr.jpg" alt="Zdjęcie 1"></label>
+        <label><input type="radio" name="q3" value="0"><img src="https://gollwitzer.pl/wp-content/uploads/2024/10/lodz-002.jpg" alt="Zdjęcie 2"></label>
+        <label><input type="radio" name="q3" value="0"><img src="https://gollwitzer.pl/wp-content/uploads/2015/05/069-300x225.jpg" alt="Zdjęcie 3"></label>
+      </div>
+
+      <div class="question">
+        <p>4. Jętka jest elementem konstrukcji:</p>
+        <label><input type="radio" name="q4" value="0"> podpiwniczenia</label>
+        <label><input type="radio" name="q4" value="0"> mostu wiszącego</label>
+        <label><input type="radio" name="q4" value="0"> muru oporowego</label>
+        <label><input type="radio" name="q4" value="1"> dachu drewnianego</label>
+      </div>
+
+      <div class="question">
+        <p>5. Trochę mechaniki :) Maksymalny moment zginający dla P=10 kN oraz L=10m to:</p>
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQJ3J6s_5ekPzv2qsWCwnFGmQiK9Vt65Ue15zXCT45mWWQTnGux" alt="Układ sił" style="height: 180px;">
+        <label><input type="radio" name="q5" value="0"> 50 kNm</label>
+        <label><input type="radio" name="q5" value="0"> 20 kNm</label>
+        <label><input type="radio" name="q5" value="1"> 25 kNm</label>
+        <label><input type="radio" name="q5" value="0"> 10 kNm</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Sprawdź wynik</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const form = document.forms['quizForm'];
+      let score = 0;
+
+      // Sprawdzanie odpowiedzi
+      for (let i = 1; i <= 5; i++) {
+        const options = form['q' + i];
+        let selected = false;
+
+        for (const option of options) {
+          if (option.checked) {
+            score += parseInt(option.value);
+            selected = true;
+            break;
+          }
+        }
+
+        if (!selected) {
+          alert('Odpowiedz na wszystkie pytania przed sprawdzeniem wyniku.');
+          return;
+        }
+      }
+
+      // Określenie wyniku na podstawie zdobytych punktów
+      let resultImg = '';
+      let resultText = '';
+
+      if (score <= 2) {
+        resultImg = 'https://a.allegroimg.com/s400/11bd47/c25e225248cfb400e29c902507c1/Katownik-stalowy-g-w-50-x-50-x-4-L-150-cm-CIECIE-NA-WYMIAR';
+        resultText = 'Kątownik – niby sobie jakoś radzi, ale zdecydowanie potrzebuje wsparcia innych.';
+      } else if (score === 3) {
+        resultImg = 'https://m.media-amazon.com/images/I/41NJ3xZfn5L._AC_UF1000_.jpg';
+        resultText = 'Rura kołowa – przyzwoicie, niby nie pozorna ale ma ukryty potencjał. Stabilne parametry geometryczne we wszystkich kierunkach';
+      } else if (score === 4) {
+        resultImg = 'https://glinmet.pl/media/catalog/product/cache/c20b16aec5011cc7868a2c9cc45a795a/d/w/dwuteownik_3.jpg';
+        resultText = 'Dwuteownik IPE 200 – doskonały wybór. Złoty środek między bezpieczeństwem i ekonomią. Znakomite charakterystyki geometryczne przy niskim zużyciu materiału. ';
+      } else {
+        resultImg = 'https://portalstali.pl/wp-content/uploads/2019/09/HEB.jpg';
+        resultText = 'Dwuteownik HEB 300 – potężny, stabilny, niezawodny. Nie jedna hala na nich stoi i żadne wiatry im niestraszne. Top!';
+      }
+
+      document.getElementById('result').innerHTML = `
+        <h2>Twój kształtownik:</h2>
+        <img src="${resultImg}" alt="Kształtownik">
+        <h3>${resultText}</h3>
+      `;
+    }
+  </script>
+</body>
+</html>
+
+
